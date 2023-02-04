@@ -1,0 +1,56 @@
+<table id="employee-table">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Department</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<script>
+  var employees = [
+    {
+      first_name: "Amit",
+      last_name: "Sharma",
+      department: "SEO",
+    },
+    {
+      first_name: "Vineet",
+      last_name: "Kumar",
+      department: "Accounts",
+    },
+    {
+      first_name: "Ajay",
+      last_name: "Thakur",
+      department: "QA",
+    },
+    {
+      first_name: "Chandra",
+      last_name: "Sharma",
+      department: "Designer",
+    },
+  ];
+
+  for (var i in employees) {
+    var employee = employees[i];
+    var row = document.createElement("tr");
+    var firstNameCell = document.createElement("td");
+    var lastNameCell = document.createElement("td");
+    var departmentCell = document.createElement("td");
+
+    firstNameCell.innerHTML = employee.first_name;
+    lastNameCell.innerHTML = employee.last_name;
+    departmentCell.innerHTML = employee.department;
+
+    row.appendChild(firstNameCell);
+    row.appendChild(lastNameCell);
+    row.appendChild(departmentCell);
+
+    document
+      .getElementById("employee-table")
+      .getElementsByTagName("tbody")[0]
+      .appendChild(row);
+  }
+</script>
